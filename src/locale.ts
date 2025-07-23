@@ -221,7 +221,7 @@ export async function getGeolocation(ip: string): Promise<Geolocation> {
 }
 
 async function getUnicodeInfo(): Promise<any> {
-    const data = await fs.promises.readFile(path.join(import.meta.dirname, 'data-files', 'territoryInfo.xml'));
+    const data = await fs.promises.readFile(path.join(import.meta?.dirname ?? __dirname, 'data-files', 'territoryInfo.xml'));
     const parser = new xml2js.Parser();
     return parser.parseStringPromise(data);
 }

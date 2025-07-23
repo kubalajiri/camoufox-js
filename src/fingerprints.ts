@@ -4,7 +4,7 @@ import { Fingerprint, FingerprintGenerator, FingerprintGeneratorOptions, ScreenF
 
 export const SUPPORTED_OS = ['linux', 'macos', 'windows'] as const;
 
-const BROWSERFORGE_DATA = loadYaml(join(import.meta.dirname, 'data-files', 'browserforge.yml'));
+const BROWSERFORGE_DATA = loadYaml(join(import.meta?.dirname ?? __dirname, 'data-files', 'browserforge.yml'));
 const FP_GENERATOR = new FingerprintGenerator({
     browsers: ['firefox'],
     operatingSystems: SUPPORTED_OS as any,

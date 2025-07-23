@@ -182,7 +182,7 @@ function getScreenCons(headless?: boolean): Screen | undefined {
 }
 
 function updateFonts(config: Record<string, any>, targetOS: string): void {
-    const fontsPath = join(import.meta.dirname, 'data-files', 'fonts.json');
+    const fontsPath = join(import.meta?.dirname ?? __dirname, 'data-files', 'fonts.json');
     const fonts = JSON.parse(readFileSync(fontsPath, 'utf-8'))[targetOS];
 
     if (config.fonts) {
